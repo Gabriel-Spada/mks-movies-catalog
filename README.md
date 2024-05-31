@@ -55,7 +55,7 @@ Banco de dados de produção no AWS RDS - Postgres (Em shutdown para poupar cust
 1. **Clonando o Repositório:**
 
    ```bash
-   git clone https://github.com/gabriel-spada/mks-movies.git
+   git clone https://github.com/Gabriel-Spada/mks-movies-catalog.git
    ```
 
 2. **Instalando Dependências:**
