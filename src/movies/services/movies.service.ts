@@ -42,7 +42,7 @@ export class MoviesService {
 
     async findAll() {
         try {
-            return await this.repository.find();
+            return await this.repository.find({order: {name: 'ASC'}});
 
         } catch (e) {
             this.error.onError(e.status, e.message);
@@ -96,7 +96,8 @@ export class MoviesService {
         try {
             const query = this.repository.createQueryBuilder('movies')
                 //Só quem sabe, sabe essa aq
-                .where('movies.deletedAt IS NULL');
+                .where('movies.deletedAt IS NULL')
+                .orderBy('movies.name', 'ASC');
 
             if (data.name) {
                 query.andWhere(`movies.name ILIKE '%${data.name}%'`);
