@@ -1,0 +1,31 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "monorepo": true,
+  "projects": {
+    "api": {
+      "type": "application",
+      "root": "src",
+      "entryFile": "main.api",
+      "sourceRoot": "src",
+      "compilerOptions": {
+        "plugins": [],
+        "assets": [
+          "wwwroot/**",
+          "./public/**/*",
+          "./views/**/*"
+        ],
+        "watchAssets": true
+      }
+    },
+    "cron": {
+      "type": "application",
+      "root": "src",
+      "entryFile": "main.cron",
+      "sourceRoot": "src",
+      "compilerOptions": {
+        "tsConfigPath": "tsconfig.build.json"
+      }
+    }
+  }
+}
