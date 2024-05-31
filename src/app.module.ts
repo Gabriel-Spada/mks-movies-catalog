@@ -40,8 +40,7 @@ import {CacheModuleClass} from "./cache/cache.module";
             logging: false,
             // logger: 'file',
             retryAttempts: 1,
-            retryDelay: 5000,
-            timezone: 'Z'
+            retryDelay: 5000
         }),
         EventEmitterModule.forRoot({
             ignoreErrors: true,

@@ -40,7 +40,7 @@ Este projeto é uma API CRUD (Create, Read, Update, Delete) de filmes com autent
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
 
 - Node.js (versão 18.x ou superior)
-- Yarn
+- Npm
 - Docker
 
 ## Deploy
@@ -62,7 +62,7 @@ Banco de dados de produção no AWS RDS - Postgres (Em shutdown para poupar cust
 
    ```bash
    cd nome-do-repositorio
-   yarn install
+   npm install
    ```
 
 3. **Configurando as Variáveis de Ambiente:**

@@ -1,5 +1,5 @@
 {
-  "name": "market-api",
+  "name": "movies-api",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -21,10 +21,8 @@
   },
   "dependencies": {
     "@apollo/server": "^4.10.1",
-    "@liaoliaots/nestjs-redis": "^9.0.5",
     "@nestjs-modules/ioredis": "^2.0.2",
     "@nestjs-modules/mailer": "^1.6.0",
-    "@nestjs-query/core": "^0.30.0",
     "@nestjs/axios": "3.0.2",
     "@nestjs/cache-manager": "2.2.1",
     "@nestjs/common": "10.3.3",
@@ -87,17 +85,15 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "4.1.1",
-    "typeorm": "0.2.45",
+    "typeorm": "^0.3",
     "typescript": "^4.7.4",
     "uuid": "^8.3.2",
     "winston": "^3.13.0"
   },
   "devDependencies": {
     "@apollo/server": "^4.10.1",
-    "@liaoliaots/nestjs-redis": "^9.0.5",
     "@nestjs-modules/ioredis": "^2.0.2",
     "@nestjs-modules/mailer": "^1.6.0",
-    "@nestjs-query/core": "^0.30.0",
     "@nestjs/axios": "3.0.2",
     "@nestjs/cache-manager": "2.2.1",
     "@nestjs/cli": "^8.0.0",
@@ -161,7 +157,7 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "4.1.1",
-    "typeorm": "0.2.45",
+    "typeorm": "^0.3",
     "typescript": "^4.7.4",
     "uuid": "^8.3.2"
   },

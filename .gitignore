@@ -40,4 +40,4 @@ package-lock.json
 /yarn.lock
 .hintrc
 
-/data*
+.data/*

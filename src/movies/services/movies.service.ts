@@ -23,7 +23,7 @@ export class MoviesService {
 
     async create(data: CreateMovieDto) {
         try {
-            const validate = await this.repository.findOne({name: data.name});
+            const validate = await this.repository.findOne({where: {name: data.name}});
             if (validate) {
                 throw new BadRequestException('Já existe um filme cadastrado com o mesmo nome.');
             }
@@ -51,7 +51,7 @@ export class MoviesService {
 
     async findOne(id: string) {
         try {
-            const entity = await this.repository.findOne(id);
+            const entity = await this.repository.findOne({where: {id: id}});
             if (!entity) {
                 throw new BadRequestException('Filme não encontrado.');
             }
@@ -63,12 +63,11 @@ export class MoviesService {
         }
     }
 
-    
 
     async update(id: string, data: UpdateMovieDto) {
         try {
             const entity = await this.findOne(id);
-            const validate = await this.repository.findOne({name: data.name, id: Not(entity.id)});
+            const validate = await this.repository.findOne({where: {name: data.name, id: Not(entity.id)}});
             if (validate) {
                 throw new BadRequestException('Já existe um filme cadastrado com o mesmo nome.');
             }
