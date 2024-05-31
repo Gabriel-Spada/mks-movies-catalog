@@ -6,8 +6,6 @@ import {ConfigModule} from "@nestjs/config";
 import {LoggerModule} from "./common/helpers/logger/logger.module";
 import {AuthModule} from "./auth/auth.module";
 import {UserModule} from './user/user.module';
-import {AutomapperModule} from "@automapper/nestjs";
-import {classes} from "@automapper/classes";
 import {MoviesModule} from './movies/movies.module';
 import {RedisModule} from "@nestjs-modules/ioredis";
 import {CacheModuleClass} from "./cache/cache.module";
@@ -17,9 +15,6 @@ import {CacheModuleClass} from "./cache/cache.module";
     imports: [
         ConfigModule.forRoot({
             isGlobal: true,
-        }),
-        AutomapperModule.forRoot({
-            strategyInitializer: classes()
         }),
         RedisModule.forRootAsync({
             useFactory: () => ({

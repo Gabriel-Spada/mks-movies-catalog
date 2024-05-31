@@ -5,23 +5,21 @@ networks:
     driver: bridge
 
 services:
-
   api:
     container_name: movies-api
-    build:
-      context: .
-#      args:
+    build: .
     ports:
-      - '3000:3000'
+      - '80:3000'
     environment:
       NODE_ENV: local
       JWT_SECRET: ed689a8a16e0f0a32ebe030b4548c45307dbdf442587779ebe98df857c4ced81
       TZ: America/Sao_Paulo
-      DB_HOST: localhost
-      DB_PORT: 3306
-      DB_USERNAME: root
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: postgres
       DB_PASSWORD: password
-      DB_DATABASE: movies-api
+      DB_DATABASE: movies
+      REDIS_URL: redis:6379
 
     networks:
       - default

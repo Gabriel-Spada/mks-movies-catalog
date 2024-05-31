@@ -83,6 +83,25 @@ Banco de dados de produção no AWS RDS - Postgres (Em shutdown para poupar cust
 
    A API estará disponível [`aqui`](http://localhost:3000).
 
+3. **Acessando o redis:**
+
+   Utilize o redis commander para vizualizar o cache.
+   ```bash
+   npm install -g redis-commander
+   redis-commander
+   ``` 
+4. **Acessando o banco:**
+
+      Utilize o adminer para vizualizar o banco.
+    [`aqui`](http://localhost:8080).
+   System:PostgreSQL
+   Server: postgres
+   Username: postgres 
+   Password: {DB_PASSWORD}
+   Database: movies
+
+    
+   
 ## Estrutura do Projeto
 
 ```
