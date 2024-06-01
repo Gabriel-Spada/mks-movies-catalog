@@ -46,9 +46,9 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
 ## Deploy
 
 
-- [`Url swagger`](https://mks-backend-challenge-lf.herokuapp.com/)
+- [`Url swagger`](https://free-inspired-goshawk.ngrok-free.app)
 
-Banco de dados de produção no AWS RDS - Postgres (Em shutdown para poupar custos desnecessários)
+Provavelmente estará desativado pois está rodando como um servidor local para poupar custos.
 
 ## Para rodar o projeto localmente
 
@@ -67,7 +67,7 @@ Banco de dados de produção no AWS RDS - Postgres (Em shutdown para poupar cust
 
 3. **Configurando as Variáveis de Ambiente:**
 
-   Renomeie o arquivo `.env.example` para `.env` e ajuste as variáveis de ambiente conforme necessário.
+   Renomeie o arquivo `.env.example` para `.env`.
 
 ## Docker
 
@@ -81,16 +81,10 @@ Banco de dados de produção no AWS RDS - Postgres (Em shutdown para poupar cust
 
 2. **Acessando a API:**
 
-   A API estará disponível [`aqui`](http://localhost:3000).
+   A API estará disponível [`aqui`](http://localhost/docs).
 
-3. **Acessando o redis:**
-
-   Utilize o redis commander para vizualizar o cache.
-   ```bash
-   npm install -g redis-commander
-   redis-commander
    ``` 
-4. **Acessando o banco:**
+3. **Acessando o banco:**
 
       Utilize o adminer para vizualizar o banco.
     [`aqui`](http://localhost:8080).
@@ -117,7 +111,7 @@ src/
 
 ## Endpoints da API
 
-O projeto possui documentação com [`swagger`](http://localhost:3000/docs). Na documentação será possível visualizar todos os endpoints, seus requerimentos para requisição e seus retornos.
+O projeto possui documentação com [`swagger`](http://localhost/docs). Na documentação será possível visualizar todos os endpoints, seus requerimentos para requisição e seus retornos.
 
 ## Considerações
 
