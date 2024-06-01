@@ -20,7 +20,7 @@ export class CreateUserDto {
 
     @ApiProperty({
         description: 'senha de acesso',
-        example: '123456'
+        example: '!Qwerty123'
     })
     @IsString()
     @MinLength(8, { message: 'A senha deve ter ao menos 8 caracteres.' })

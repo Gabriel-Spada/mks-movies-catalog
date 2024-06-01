@@ -1,4 +1,4 @@
-import {Controller, Post, Body, Param, Delete, UseGuards} from '@nestjs/common';
+import { Controller, Post, Body, Param, Delete, UseGuards, Res } from "@nestjs/common";
 import {UserService} from "../services/user.service";
 import {CreateUserDto} from "../dto/create-user.dto";
 import {ApiBearerAuth, ApiOkResponse, ApiTags} from "@nestjs/swagger";
@@ -20,8 +20,8 @@ export class UserController {
     description: 'Usuário criado com sucesso',
     type: User,
   })
-  create(@Body() data: CreateUserDto) {
-    return this.userService.create(data);
+  async create(@Body() data: CreateUserDto,@Res() res: any) {
+    return res.status(200).json(await this.userService.create(data));
   }
 
   @UseGuards(JwtAuthGuard)
@@ -30,7 +30,7 @@ export class UserController {
     description: 'Usuário excluído com sucesso',
     type: DefaultMessage,
   })
-  remove(@Param('id') id: string) {
-    return this.userService.remove(id);
+  async remove(@Param('id') id: string,@Res() res: any) {
+    return res.status(200).json(await this.userService.remove(id));
   }
 }

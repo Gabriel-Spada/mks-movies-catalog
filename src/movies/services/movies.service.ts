@@ -34,7 +34,7 @@ export class MoviesService {
                 throw new BadRequestException('Ocorreu um erro ao criar o filme.');
             }
 
-            return this.findOne(save.id);
+            return await this.findOne(save.id);
         } catch (e) {
             this.error.onError(e.status, e.message);
         }
@@ -43,7 +43,6 @@ export class MoviesService {
     async findAll() {
         try {
             return await this.repository.find({order: {name: 'ASC'}});
-
         } catch (e) {
             this.error.onError(e.status, e.message);
         }
@@ -74,7 +73,7 @@ export class MoviesService {
 
             await this.repository.save({...entity, ...data});
 
-            return this.findOne(id);
+            return await this.findOne(id);
         } catch (e) {
             this.error.onError(e.status, e.message);
         }
