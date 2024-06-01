@@ -14,14 +14,20 @@ services:
       - .env.example
     networks:
       - default
+    volumes:
+      - .:/app
 
   postgres:
     image: postgres:latest
     container_name: postgres
     environment:
       POSTGRES_PASSWORD: password
+      POSTGRES_NAME: postgres
       POSTGRES_DB: movies
-
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "5435:5432"
     volumes:

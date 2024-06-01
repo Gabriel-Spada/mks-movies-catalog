@@ -41,7 +41,7 @@ async function bootstrap() {
         .setTitle('Mks Movies API')
         .setDescription('Interface REST da MKS Movies')
         .setVersion('1.0')
-        .setContact('developer', 'developer',  'gabrielspada0@gmail.com')
+        .setContact('developer', 'https://www.linkedin.com/in/gabriel-spada-b2b676219/',  'gabrielspada0@gmail.com')
         .addBearerAuth(
             {
               type: 'http',

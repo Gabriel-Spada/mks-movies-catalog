@@ -2,14 +2,11 @@ import {BadRequestException, Controller, Get, HttpCode, HttpStatus} from '@nestj
 import {ApiOkResponse, ApiOperation, ApiProperty, ApiTags} from "@nestjs/swagger";
 import {DateTime} from "luxon";
 import * as os from "os";
-import {getManager} from "typeorm";
-import {IsEmail, IsNotEmpty, IsString, Matches, MinLength} from "class-validator";
 
 export class HealthResponse {
-    constructor(status?: string, time?: string, dbTime?: string, environment?: string, host?: string) {
+    constructor(status?: string, time?: string,  environment?: string, host?: string) {
         this.status = status;
         this.time = time;
-        this.dbTime = dbTime;
         this.environment = environment;
         this.host = host;
     }
@@ -25,12 +22,6 @@ export class HealthResponse {
         example: new Date().toISOString(),
     })
     time: string;
-
-    @ApiProperty({
-        description: 'Database time',
-        example: new Date().toISOString(),
-    })
-    dbTime: string;
 
     @ApiProperty({
         description: 'Environment',
@@ -67,13 +58,11 @@ export class AppController {
     })
     async getHealthCheck() {
         try {
-            const entityManager = getManager();
-            const dbDate = await entityManager.query("SELECT NOW() as now");
 
             const now = DateTime.now().setZone(process.env.TZ).toISO();
             const host = this.getServerIp();
 
-            const response = new HealthResponse('server ok!', now, dbDate[0].now, process.env.NODE_ENV, host);
+            const response = new HealthResponse('server ok!', now, process.env.NODE_ENV, host);
 
             return response;
         } catch (e) {
