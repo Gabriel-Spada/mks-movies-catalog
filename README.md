@@ -83,15 +83,19 @@ Provavelmente estará desativado pois está rodando como um servidor local para 
 
    A API estará disponível [`aqui`](http://localhost/docs).
 
-   ``` 
+
 3. **Acessando o banco:**
 
-      Utilize o adminer para vizualizar o banco.
+   Utilize o adminer para vizualizar o banco.
     [`aqui`](http://localhost:8080).
-   System:PostgreSQL
+   System:PostgresSQL
+
    Server: postgres
-   Username: postgres 
+
+   Username: postgres
+ 
    Password: {DB_PASSWORD}
+
    Database: movies
 
     
